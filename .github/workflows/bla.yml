@@ -1,4 +1,6 @@
-name: Brand new'"<;\
+name: |
+  Brand new'"<;\
+  dasads
 
 on:
   pull_request:
