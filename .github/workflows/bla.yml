@@ -21,8 +21,5 @@ jobs:
             v1-hello-${{ hashFiles('hello2.txt') }}
             v1-hello
 
-      - name: cat
-        run: cat hello2.txt
-
       - name: echo
         run: echo 'xasxasxaxs' > hello2.txt
