@@ -15,10 +15,10 @@ jobs:
         uses: actions/cache@v2
         with:
           path: hello2.txt
-          key: v1-hello-${{ hashFiles('hello2.txt') }}
+          key: v2-hello-${{ hashFiles('hello2.txt') }}
           restore-keys: |
-            v1-hello-${{ hashFiles('hello2.txt') }}
-            v1-hello
+            v2-hello-${{ hashFiles('hello2.txt') }}
+            v2-hello
 
       - name: create file
         run: echo 'helloxxx' > hello2.txt
