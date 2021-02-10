@@ -1,0 +1,23 @@
+name: PR check
+
+on:
+  pull_request:
+    types: [opened, synchronize, edited]
+
+jobs:
+  pr-check: 
+    name: Check PR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache file
+        uses: actions/cache@v2
+        with:
+          path: hello.txt
+          key: v1-hello-${{ hashFiles('hello.txt') }}
+          restore-keys: |
+            v1-hello-${{ hashFiles('hello.txt') }}
+            v1-hello
+      - name: cat
+        run: cat hello.txt
