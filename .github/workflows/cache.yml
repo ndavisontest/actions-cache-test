@@ -14,12 +14,12 @@ jobs:
       - name: Cache file
         uses: actions/cache@v2
         with:
-          path: hello2.txt
-          key: v2-hello-${{ hashFiles('hello2.txt') }}
+          path: test.txt
+          key: v1-test-${{ hashFiles('test.txt') }}
           restore-keys: |
-            v2-hello-${{ hashFiles('hello2.txt') }}
-            v2-hello
+            v1-test-${{ hashFiles('test.txt') }}
+            v1-test
 
-      - name: create file
-        run: echo 'helloxxx' > hello2.txt
+      - name: cat
+        run: test.txt
 
